@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Now</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- loader -->
+  <div id="loader-wrapper">
+    <div class="loader">
+      <div class="loader-ring">
+        <div class="ring"></div>
+        <img src="../frontend/assets/AariWorkLogo.png" class="loader-logo" alt="Logo" />
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="../frontend/assets/AariWorkLogo.png" alt="Logo" class="logo-img">
+      <span class="logo-title">Unique Aari Work</span>
+    </div>
+    <nav class="nav-center">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="subscribe.html" class="subscribe-pill">Subscribe</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <form class="search-form">
+        <input type="text" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <a href="cart.html" class="icon-btn" title="Cart">🛒</a>
+    </div>
+  </header>
+
+  <section class="shop-section">
+    <h2 id="shop-title">Loading...</h2>
+    <div id="product-list" class="products"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-line"></div>
+    <div class="footer-sections">
+      <div class="footer-column">
+        <h3>Aari Creations</h3>
+        <p>Elegant hand embroidery, Aari work artistry, and custom ethnic designs that bring beauty to every stitch.</p>
+        <div class="footer-column footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="shop.html">Custom Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Order Help</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns & Exchange</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+        <p><i class="fa fa-phone"></i> +91-9876543210</p>
+        <p><i class="fa fa-envelope"></i> contact@aaricreations.com</p>
+        <p>Subscribe to our newsletter:</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email" required />
+          <button type="submit" class="newsletter-btn">Send</button>
+        </form>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>© 2025 Aari Creations. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Cookies</a></p>
+    </div>
+  </footer>
+
+  <div id="subscribeModal" class="subscribe-modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 class="modal-title">Stay Connected</h2>
+      <form id="subscribeForm">
+        <input type="text" id="username" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="thankYouPopup" class="thank-you-popup">
+    <div class="popup-content">
+      <h3>🎉 Thank You!</h3>
+      <p>You have successfully subscribed.</p>
+      <p>We appreciate your love for Aari Work!</p>
+    </div>
+  </div>
+
+  <!-- subscribe js -->
+ <script>
+  const subscribeBtn = document.querySelector('.subscribe-pill');
+  const modal = document.getElementById('subscribeModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const form = document.getElementById('subscribeForm');
+  const popup = document.getElementById('thankYouPopup');
+
+  subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  form.onsubmit = async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+
+  try {
+    const response = await fetch('http://localhost:8080/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email })
+    });
+
+    if (response.ok) {
+      modal.style.display = 'none';
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 3000);
+      form.reset();
+    } else {
+      alert("Subscription failed. Please try again.");
+    }
+  } catch (error) {
+    alert("Server error. Check backend is running.");
+  }
+};
+
+</script>
+
+
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.getElementById("loader-wrapper").style.display = "none";
+      }, 2000);
+    });
+  </script>
+
+  <script>
+    const productsData = {
+      blouse: [
+        { name: "Mirror Work Blouse", img: "assets/gallery/blouse1.webp", price: 1499 },
+        { name: "Silk Embroidered Blouse", img: "assets/gallery/blouse2.jpg", price: 1299 },
+        { name: "Sequin Party Blouse", img: "assets/gallery/blouse3.jpg", price: 1099 },
+        { name: "Velvet Bridal Blouse", img: "assets/gallery/blouse4.webp", price: 1799 },
+        { name: "Mirror Work Blouse", img: "assets/gallery/blouse5.jpg", price: 1499 },
+        { name: "Silk Embroidered Blouse", img: "assets/gallery/blouse6.jpg", price: 1299 },
+        { name: "Sequin Party Blouse", img: "assets/gallery/blouse7.webp", price: 1099 },
+        { name: "Velvet Bridal Blouse", img: "assets/gallery/DesignerBlouse.webp", price: 1799 },
+      ],
+      saree: [
+        { name: "Zari Woven Silk Saree", img: "assets/gallery/saree1.jpeg", price: 2999 },
+        { name: "Floral Organza Saree", img: "assets/gallery/saree2.avif", price: 2499 },
+        { name: "Traditional Bandhani Saree", img: "assets/gallery/saree3.webp", price: 2699 },
+        { name: "Kanjivaram Designer Saree", img: "assets/gallery/saree4.jpg", price: 3499 },
+        { name: "Zari Woven Silk Saree", img: "assets/gallery/saree5.webp", price: 2999 },
+        { name: "Floral Organza Saree", img: "assets/gallery/saree6.webp", price: 2499 },
+        { name: "Traditional Bandhani Saree", img: "assets/gallery/saree7.webp", price: 2699 },
+        { name: "Kanjivaram Designer Saree", img: "assets/gallery/saree8.jpg", price: 3499 },
+      ],
+      lehenga: [
+        { name: "Heavy Embroidered Lehenga", img: "assets/gallery/lehenga1.webp", price: 6999 },
+        { name: "Pastel Wedding Lehenga", img: "assets/gallery/lehenga2.webp", price: 7999 },
+        { name: "Velvet Designer Lehenga", img: "assets/gallery/lehenga3.webp", price: 7499 },
+        { name: "Mirror Work Lehenga", img: "assets/gallery/lehenga4.jpg", price: 8299 },
+        { name: "Heavy Embroidered Lehenga", img: "assets/gallery/lehenga5.webp", price: 6999 },
+        { name: "Pastel Wedding Lehenga", img: "assets/gallery/lehenga6.jpg", price: 7999 },
+        { name: "Velvet Designer Lehenga", img: "assets/gallery/lehenga7.webp", price: 7499 },
+        { name: "Mirror Work Lehenga", img: "assets/gallery/lehenga8.jpg", price: 8299 },
+      ]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    const shopTitle = document.getElementById("shop-title");
+    const productList = document.getElementById("product-list");
+
+    function loadProducts() {
+      if (!productsData[category]) {
+        shopTitle.innerText = "Category Not Found";
+        return;
+      }
+
+      shopTitle.innerText = `Shop ${category.charAt(0).toUpperCase() + category.slice(1)}s`;
+      productsData[category].forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        // Ensure we pass 'image' key instead of 'img' to be consistent in cart.html
+        const productForCart = {
+          name: product.name,
+          price: product.price,
+          image: product.img
+        };
+
+        card.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" />
+          <h4>${product.name}</h4>
+          <p>Price: ₹${product.price}</p>
+          <button onclick='addToCart(${JSON.stringify(productForCart)})'>Add to Cart</button>
+        `;
+        productList.appendChild(card);
+      });
+    }
+
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(product.name + " added to cart!");
+    }
+
+    loadProducts();
+  </script>
+  
+</body>
+</html>

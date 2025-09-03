@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products | Aari Creations</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+
+</head>
+<body>
+ <!-- loader -->
+<!-- Loader Section -->
+<div id="loader-wrapper">
+  <div class="loader">
+    <div class="loader-ring">
+      <div class="ring"></div> <!-- rotating ring -->
+      <img src="../frontend/assets/AariWorkLogo.png" class="loader-logo" alt="Logo" />
+    </div>
+  </div>
+</div>
+  <!-- Header (unchanged) -->
+  <header class="header">
+    <div class="logo">
+      <img src="../frontend/assets/AariWorkLogo.png" alt="Logo" class="logo-img" />
+      <span class="logo-title">Unique Aari Work</span>
+    </div>
+    <nav class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="subscribe.html" class="subscribe-pill">Subscribe</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <form class="search-form">
+        <input type="text" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <a href="cart.html" class="icon-btn">🛒</a>
+    </div>
+  </header>
+  <!-- Main Title -->
+  <section class="main-heading-section">
+    <h1 class="main-heading">Our Collection</h1>
+    <div class="underline"></div>
+  </section>
+
+  <!-- Products Section with Extras -->
+  <section class="products">
+   
+
+
+    <!-- ✨ Added Highlights -->
+    <div class="unique-highlight">
+      <i class="fa-solid fa-star"></i>
+      <p>Each piece is <strong>hand‑embroidered</strong> by artisans with love & heritage.</p>
+    </div>
+
+    <div class="limited-offer">
+      <i class="fa-solid fa-clock"></i>
+      <p>Special Offer: <strong>Save 10% OFF</strong> on your first custom order!</p>
+    </div>
+
+    <div class="custom-order-cta">
+      Want a design just for you? <a href="shop.html">Request a Custom Aari Piece</a>.
+    </div>
+
+    <div class="mini-testimonial">
+      “Absolutely in love with the blouse I ordered! The detailing is just stunning.”
+      <span>– Meera, Pune</span>
+    </div>
+
+    <!-- Product Cards (unchanged) -->
+   <section class="products">
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="assets/gallery/blouse1.webp" alt="Embroidered Blouse" />
+        <h3>Embroidered Blouse</h3>
+        <p>Price: ₹1,499</p>
+        <button class="btn add-to-cart" onclick="addToCart({ name: 'Embroidered Blouse', price: '1499', offer: '10% OFF', image: 'assets/gallery/blouse1.webp' })">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/gallery/lehenga1.webp" alt="Wedding Lehenga" />
+        <h3>Wedding Lehenga</h3>
+        <p>Price: ₹4,999</p>
+        <button class="btn add-to-cart" onclick="addToCart({ name: 'Wedding Lehenga', price: '4999', offer: '15% OFF', image: 'assets/gallery/lehenga1.webp' })">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/gallery/saree1.jpeg" alt="Designer Saree Drape" />
+        <h3>Designer Saree Drape</h3>
+        <p>Price: ₹999</p>
+        <button class="btn add-to-cart" onclick="addToCart({ name: 'Designer Saree Drape', price: '999', offer: '5% OFF', image: 'assets/gallery/saree1.jpeg' })">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+   <!-- Categories -->
+ <section class="categories">
+  <h2>Our Collections</h2>
+  <div class="category-cards">
+    <div class="card zoom-in">
+      <img src="assets/DesignerBlouse!.jpg" alt="Blouse Designs" />
+      <h3>Designer Blouses</h3>
+      
+      <!-- Inside your Blouse section -->
+<a href="shop.html?category=blouse" class="btn">Show More</a>
+    </div>
+    <div class="card zoom-in delay-1">
+      <img src="assets/SaariDraping.jpg" alt="Saree Draping" />
+      <h3>Saree Draping</h3>
+      <!-- Inside Saree section -->
+<a href="shop.html?category=saree" class="btn">Show More</a>
+    </div>
+    <div class="card zoom-in delay-2">
+      <img src="assets/Wedding Lehengas.webp" alt="Lehengas" />
+      <h3>Wedding Lehengas</h3>
+      
+<!-- Inside Lehenga section -->
+<a href="shop.html?category=lehenga" class="btn">Show More</a>
+    </div>
+  </div>
+ 
+</section>
+
+  <!-- Footer -->
+<footer>
+  
+<div class="footer-line"></div>
+
+  <div class="footer-sections">
+    <!-- About -->
+    <div class="footer-column">
+      <h3>Aari Creations</h3>
+      <p>Elegant hand embroidery, Aari work artistry, and custom ethnic designs that bring beauty to every stitch.</p>
+     <div class="footer-column footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+     <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">cart</a></li>
+        <li><a href="shop.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Order Help</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchange</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+      <p><i class="fa fa-phone"></i> +91-9876543210</p>
+      <p><i class="fa fa-envelope"></i> contact@aaricreations.com</p>
+      <p>Subscribe to our newsletter:</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email" required />
+        <button type="submit" class="newsletter-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <p>© 2025 Aari Creations. All rights reserved.
+      | <a href="#">Privacy Policy</a>
+      | <a href="#">Terms</a>
+      | <a href="#">Cookies</a>
+    </p>
+  </div>
+</footer>
+ <!-- Subscribe -->
+   <!-- Subscribe Modal -->
+<div id="subscribeModal" class="subscribe-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 class="modal-title">Stay Connected</h2>
+    <form id="subscribeForm">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="thank-you-popup">
+  <div class="popup-content">
+    <h3>🎉 Thank You!</h3>
+    <p>You have successfully subscribed.</p>
+    <p>We appreciate your love for Aari Work!</p>
+  </div>
+</div>
+
+
+
+
+<!-- subscribe js -->
+<!-- subscribe js -->
+ <script>
+  const subscribeBtn = document.querySelector('.subscribe-pill');
+  const modal = document.getElementById('subscribeModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const form = document.getElementById('subscribeForm');
+  const popup = document.getElementById('thankYouPopup');
+
+  subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  form.onsubmit = async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+
+  try {
+    const response = await fetch('http://localhost:8080/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email })
+    });
+
+    if (response.ok) {
+      modal.style.display = 'none';
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 3000);
+      form.reset();
+    } else {
+      alert("Subscription failed. Please try again.");
+    }
+  } catch (error) {
+    alert("Server error. Check backend is running.");
+  }
+};
+
+</script>
+
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+  <script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+    }, 2000); // 2seconds
+  });
+</script>
+
+<script>
+  function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(product.name + " added to cart!");
+  }
+</script>
+<script>
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(product.name + " added to cart!");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Place Your Order</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Order Now</h2>
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="tel" id="phone" placeholder="Phone Number" required><br>
+    <input type="text" id="address" placeholder="Delivery Address" required><br>
+    <input type="text" id="product" placeholder="Product Name" required><br>
+    <input type="number" id="quantity" placeholder="Quantity" min="1" required><br>
+    <input type="number" id="totalPrice" placeholder="Total Price" step="0.01" required><br>
+    <select id="payment" required>
+      <option value="">Select Payment</option>
+      <option value="COD">Cash on Delivery</option>
+      <option value="Online">Online Payment</option>
+    </select><br>
+    <button type="submit">Place Order</button>
+  </form>
+
+  <script>document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const order = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    address: document.getElementById("address").value,
+    product: document.getElementById("product").value,
+    quantity: parseInt(document.getElementById("quantity").value),
+    totalPrice: parseFloat(document.getElementById("totalPrice").value),
+    payment: document.getElementById("payment").value
+  };
+
+  fetch("http://localhost:8080/api/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(order)
+  })
+  .then(res => res.text())
+  .then(data => {
+    alert(data);
+    document.getElementById("orderForm").reset();
+  })
+  .catch(err => console.error("Order failed:", err));
+});
+</script>
+</body>
+</html> -->

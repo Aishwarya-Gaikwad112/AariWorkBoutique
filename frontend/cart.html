@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Shop Cart</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ <!-- loader -->
+<!-- Loader Section -->
+<div id="loader-wrapper">
+  <div class="loader">
+    <div class="loader-ring">
+      <div class="ring"></div> <!-- rotating ring -->
+      <img src="../frontend/assets/AariWorkLogo.png" class="loader-logo" alt="Logo" />
+    </div>
+  </div>
+</div>
+    <header class="header">
+   <div class="logo">
+  <img src="../frontend/assets/AariWorkLogo.png" alt="Logo" class="logo-img">
+    <span class="logo-title">Unique Aari Work</span>
+</div>
+
+
+  <nav class="nav-center">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="subscribe.html" class="subscribe-pill">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <form class="search-form">
+      <input type="text" placeholder="Search..." />
+      <button type="submit">🔍</button>
+    </form>
+
+    <a href="cart.html" class="icon-btn" title="Cart">🛒</a>
+
+    
+  </div>
+</header>
+  <!-- Header (Optional) -->
+  <div>
+    <h1 style="text-align:center;">My Shopping Cart</h1>
+  </div>
+
+  <!-- Cart Section Starts -->
+  <section class="cart-section">
+    <div class="cart-container">
+      <h2>Your Cart</h2>
+      <div class="cart-items">
+        <!-- Example Cart Item -->
+        <div class="cart-item">
+          <img src="./assets/DesignerBlouse.webp" alt="Product 1" />
+          <div class="cart-details">
+            <h3>Embroidered Blouse</h3>
+            <p>₹1,200</p>
+            <div class="quantity">
+              <label>Qty:</label>
+              <input type="number" value="1" min="1" />
+            </div>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </div>
+        <!-- Repeat .cart-item for each product dynamically -->
+      </div>
+      <div class="cart-summary">
+        <p>Total: ₹1,200</p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+<footer>
+  <div class="footer-line"></div>
+  <div class="footer-sections">
+   <!-- About -->
+    <div class="footer-column">
+      <h3>Aari Creations</h3>
+      <p>Elegant hand embroidery, Aari work artistry, and custom ethnic designs that bring beauty to every stitch.</p>
+     <div class="footer-column footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+    </div>
+
+
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">cart</a></li>
+        <li><a href="shop.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Order Help</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchange</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+      <p><i class="fa fa-phone"></i> +91-9876543210</p>
+      <p><i class="fa fa-envelope"></i> contact@aaricreations.com</p>
+      <p>Subscribe to our newsletter:</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email" required />
+        <button type="submit" class="newsletter-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <p>© 2025 Aari Creations. All rights reserved.
+      | <a href="#">Privacy Policy</a>
+      | <a href="#">Terms</a>
+      | <a href="#">Cookies</a>
+    </p>
+  </div>
+</footer>
+ <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+   <!-- Subscribe -->
+   <!-- Subscribe Modal -->
+<div id="subscribeModal" class="subscribe-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 class="modal-title">Stay Connected</h2>
+    <form id="subscribeForm">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="thank-you-popup">
+  <div class="popup-content">
+    <h3>🎉 Thank You!</h3>
+    <p>You have successfully subscribed.</p>
+    <p>We appreciate your love for Aari Work!</p>
+  </div>
+</div>
+
+<!-- order now -->
+ <!-- Order Form Modal -->
+<div id="orderModal" class="subscribe-modal">
+  <div class="modal-content">
+    <span class="close-order">&times;</span>
+    <h2 class="modal-title">Complete Your Order</h2>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+<input type="email" id="orderEmail" name="email" required />
+
+ <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="text" id="address" placeholder="Delivery Address" required />
+      <input type="text" id="product" placeholder="Product" readonly />
+     <input type="number" id="quantity" placeholder="Quantity" value="1" readonly />
+
+      <input type="number" id="totalPrice" placeholder="Total Price" step="0.01" required />
+      <select id="payment" required>
+        <option value="">Select Payment</option>
+        <option value="COD">Cash on Delivery</option>
+        <option value="Online">Online Payment</option>
+      </select>
+      <button type="submit" class="send-btn">Place Order</button>
+    </form>
+  </div>
+</div>
+
+<!-- Thank You Popup for Order -->
+<!-- Thank You Popup for Order -->
+<div id="orderThanks" class="thank-you-popup" style="display: none;">
+  <div class="popup-content">
+    <h3>🎉 Order Placed!</h3>
+    <p>We’ll process your order soon. Thank you!</p>
+  </div>
+</div>
+
+
+
+
+<!-- subscribe js -->
+ <!-- subscribe js -->
+ <script>
+  const subscribeBtn = document.querySelector('.subscribe-pill');
+  const modal = document.getElementById('subscribeModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const form = document.getElementById('subscribeForm');
+  const popup = document.getElementById('thankYouPopup');
+
+  subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  form.onsubmit = async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+
+  try {
+    const response = await fetch('http://localhost:8080/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email })
+    });
+
+    if (response.ok) {
+      modal.style.display = 'none';
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 3000);
+      form.reset();
+    } else {
+      alert("Subscription failed. Please try again.");
+    }
+  } catch (error) {
+    alert("Server error. Check backend is running.");
+  }
+};
+
+</script>
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+    }, 2000); // 2 seconds
+  });
+</script>
+
+
+  <!-- Cart Section Ends -->
+
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartContainer = document.querySelector(".cart-items");
+    const totalPriceElement = document.querySelector(".cart-summary p");
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartContainer.innerHTML = "";
+
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>No items in cart.</p>";
+        totalPriceElement.textContent = "Total: ₹0.00";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const price = parseFloat(item.price);
+        total += price;
+
+        const cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" />
+          <div class="cart-details">
+            <h3>${item.name}</h3>
+            <p>₹${item.price}</p>
+            <p class="offer">${item.offer || ""}</p>
+            <div class="quantity">
+              <label>Qty:</label>
+             <input type="number" value="1" min="1" onchange="updateQuantity(this, ${index}, ${item.price})" />
+
+            </div>
+            <button class="shop-btn" onclick="shopNow('${item.name}', ${item.price})">Shop Now</button>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
+      });
+
+      totalPriceElement.textContent = `Total: ₹${total.toFixed(2)}`;
+    }
+
+    window.removeItem = function(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    };
+
+   window.shopNow = function(name, price) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+
+  // 🆕 Get the actual quantity from the cart item in the DOM
+  const allItems = document.querySelectorAll('.cart-item');
+  let selectedQty = 1;
+
+  allItems.forEach(itemEl => {
+    const productName = itemEl.querySelector('h3').textContent;
+    if (productName === name) {
+      selectedQty = parseInt(itemEl.querySelector('input[type="number"]').value) || 1;
+    }
+  });
+
+  const total = selectedQty * price;
+
+  // Fill modal form with updated values
+  document.getElementById("product").value = item.name;
+  document.getElementById("quantity").value = selectedQty;
+  document.getElementById("totalPrice").value = total.toFixed(2);
+
+  const modal = document.getElementById("orderModal");
+  if (modal) modal.style.display = "flex";
+};
+
+
+    window.updateOrderTotal = function(input, name, price) {
+      const qty = parseInt(input.value) || 1;
+      document.getElementById("quantity").value = qty;
+      document.getElementById("totalPrice").value = (qty * price).toFixed(2);
+    };
+
+    document.querySelector(".close-order").onclick = () => {
+      document.getElementById("orderModal").style.display = "none";
+    };
+
+    loadCart();
+  });
+</script>
+<script>
+  window.updateQuantity = function (input, index, price) {
+  const qty = parseInt(input.value) || 1;
+
+  // Update item price display for that product
+  const priceElement = input.closest(".cart-details").querySelector("p");
+  const newPrice = qty * price;
+  priceElement.textContent = `₹${newPrice.toFixed(2)}`;
+
+  // Recalculate overall cart total
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
+  const quantityInputs = document.querySelectorAll(".cart-item .quantity input");
+
+  quantityInputs.forEach((qtyInput, idx) => {
+    const itemPrice = parseFloat(cart[idx].price);
+    const itemQty = parseInt(qtyInput.value) || 1;
+    total += itemPrice * itemQty;
+  });
+
+  document.querySelector(".cart-summary p").textContent = `Total: ₹${total.toFixed(2)}`;
+};
+
+document.getElementById("orderForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const orderData = {
+    name: document.getElementById("name").value,
+ email: document.getElementById("orderEmail").value,
+    phone: document.getElementById("phone").value,
+    address: document.getElementById("address").value,
+    product: document.getElementById("product").value,
+    quantity: parseInt(document.getElementById("quantity").value),
+    totalPrice: parseFloat(document.getElementById("totalPrice").value),
+    payment: document.getElementById("payment").value
+  };
+
+  try {
+    const response = await fetch("http://localhost:8080/api/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(orderData)
+    });
+
+    if (response.ok) {
+      // Hide modal and show success popup
+      document.getElementById("orderModal").style.display = "none";
+      document.getElementById("orderThanks").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("orderThanks").style.display = "none";
+      }, 3000);
+
+      // Optional: clear form
+      document.getElementById("orderForm").reset();
+    } else {
+      alert("⚠️ Order failed: Server returned error.");
+      console.error("Server response:", await response.text());
+    }
+  } catch (error) {
+    alert("❌ Could not connect to server.");
+    console.error("Network error:", error);
+  }
+});
+</script>
+
+ 
+
+</body>
+</html>

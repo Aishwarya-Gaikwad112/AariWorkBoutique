@@ -1,0 +1,269 @@
+<!-- frontend/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Your Boutique</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body>
+   <!-- loader -->
+<!-- Loader Section -->
+<div id="loader-wrapper">
+  <div class="loader">
+    <div class="loader-ring">
+      <div class="ring"></div> <!-- rotating ring -->
+      <img src="../frontend/assets/AariWorkLogo.png" class="loader-logo" alt="Logo" />
+    </div>
+  </div>
+</div>
+
+  <!-- Header -->
+ <header class="header">
+   <div class="logo">
+  <img src="../frontend/assets/AariWorkLogo.png" alt="Logo" class="logo-img">
+    <span class="logo-title">Unique Aari Work</span>
+</div>
+
+
+  <nav class="nav-center">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="subscribe.html" class="subscribe-pill">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <form class="search-form">
+      <input type="text" placeholder="Search..." />
+      <button type="submit">🔍</button>
+    </form>
+
+    <a href="cart.html" class="icon-btn" title="Cart">🛒</a>
+
+    
+  </div>
+</header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p class="contact-info">We'd love to hear from you! Send us your inquiries or feedback.</p>
+
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    Free Shipping on Orders over ₹999 | Call us: +91-9876543210
+  </div>
+  <!-- Footer -->
+   <!-- Footer -->
+<footer>
+  <div class="footer-line"></div>
+   <div class="footer-sections">
+    <!-- About -->
+    <div class="footer-column">
+      <h3>Aari Creations</h3>
+      <p>Elegant hand embroidery, Aari work artistry, and custom ethnic designs that bring beauty to every stitch.</p>
+     <div class="footer-column footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">cart</a></li>
+        <li><a href="shop.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Order Help</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchange</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+      <p><i class="fa fa-phone"></i> +91-9876543210</p>
+      <p><i class="fa fa-envelope"></i> contact@aaricreations.com</p>
+      <p>Subscribe to our newsletter:</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email" required />
+        <button type="submit" class="newsletter-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <p>© 2025 Aari Creations. All rights reserved.
+      | <a href="#">Privacy Policy</a>
+      | <a href="#">Terms</a>
+      | <a href="#">Cookies</a>
+    </p>
+  </div>
+</footer>
+ <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+ <!-- Subscribe -->
+   <!-- Subscribe Modal -->
+<div id="subscribeModal" class="subscribe-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 class="modal-title">Stay Connected</h2>
+    <form id="subscribeForm">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="thank-you-popup">
+  <div class="popup-content">
+    <h3>🎉 Thank You!</h3>
+    <p>You have successfully subscribed.</p>
+    <p>We appreciate your love for Aari Work!</p>
+  </div>
+</div>
+
+
+
+
+<!-- subscribe js -->
+ <!-- subscribe js -->
+ <script>
+  const subscribeBtn = document.querySelector('.subscribe-pill');
+  const modal = document.getElementById('subscribeModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const form = document.getElementById('subscribeForm');
+  const popup = document.getElementById('thankYouPopup');
+
+  subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  form.onsubmit = async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+
+  try {
+    const response = await fetch('http://localhost:8080/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email })
+    });
+
+    if (response.ok) {
+      modal.style.display = 'none';
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 3000);
+      form.reset();
+    } else {
+      alert("Subscription failed. Please try again.");
+    }
+  } catch (error) {
+    alert("Server error. Check backend is running.");
+  }
+};
+
+</script>
+
+
+<!-- Backend js -->
+ 
+  
+  <script>
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: contactForm.elements["name"].value,
+      email: contactForm.elements["email"].value,
+      message: contactForm.elements["message"].value
+    };
+
+    fetch("http://localhost:8080/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      } else {
+        alert("❌ Failed to send message. Server responded with error.");
+      }
+    })
+    .catch(error => {
+      alert("❌ Failed to send message. Please try again.");
+      console.error("Error:", error);
+    });
+  });
+</script>
+
+
+<!-- loader -->
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+    }, 2000); // 2 seconds
+  });
+</script>
+</body>
+</html>
+

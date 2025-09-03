@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin-modern.css" />
+  <style>nav button {
+  background-color: #ff4d4d; /* red color */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-left: 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+
+nav button:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
+}
+</style>
+</head>
+<body>
+  <!-- loader -->
+<!-- Loader Section -->
+<div id="loader-wrapper">
+  <div class="loader">
+    <div class="loader-ring">
+      <div class="ring"></div> <!-- rotating ring -->
+      <img src="../frontend/assets/AariWorkLogo.png" class="loader-logo" alt="Logo" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  <header class="header">
+    <div class="logo">
+  <img src="../frontend/assets/AariWorkLogo.png" alt="Logo" class="logo-img">
+    <span class="logo-title">Unique Aari Work</span>
+</div>
+
+
+    <nav class="nav-center">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="subscribe.html" class="subscribe-pill">Subscribe</a></li>
+      </ul>
+      <button onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="header-right">
+      <form class="search-form">
+        <input type="text" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <a href="cart.html" class="icon-btn" title="Cart">🛒</a>
+    </div>
+  </header>
+
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="#orders"><i class="fas fa-box"></i> Orders</a></li>
+        <li><a href="#products"><i class="fas fa-tags"></i> Products</a></li>
+        <li><a href="#users"><i class="fas fa-users"></i> Customers</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#upload"><i class="fas fa-upload"></i> Uploads</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <section id="orders">
+        <h3>📦 Orders</h3>
+        <div class="admin-box">No orders yet</div>
+      </section>
+
+      <section id="products">
+        <h3>🛍️ Manage Products</h3>
+        <div class="admin-box">Product list or add/edit UI here</div>
+      </section>
+
+      <section id="users">
+        <h3>👥 Customer Info</h3>
+        <div class="admin-box">Customer details appear here</div>
+      </section>
+
+      <section id="contact">
+        <h3>📨 Contact Messages</h3>
+        <div class="admin-box">Submitted queries from contact form</div>
+      </section>
+
+      <section id="upload">
+        <h3>📤 Upload Products</h3>
+        <form class="upload-form">
+          <input type="file" name="product-image" />
+          <button type="submit">Upload</button>
+        </form>
+      </section>
+    </main>
+  </div>
+   <!-- Footer -->
+<footer>
+  
+<div class="footer-line"></div>
+
+  <div class="footer-sections">
+    <!-- About -->
+    <div class="footer-column">
+      <h3>Aari Creations</h3>
+      <p>Elegant hand embroidery, Aari work artistry, and custom ethnic designs that bring beauty to every stitch.</p>
+     <div class="footer-column footer-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">cart</a></li>
+        <li><a href="shop.html">Custom Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Order Help</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchange</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+      <p><i class="fa fa-phone"></i> +91-9876543210</p>
+      <p><i class="fa fa-envelope"></i> contact@aaricreations.com</p>
+      <p>Subscribe to our newsletter:</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Your email" required />
+        <button type="submit" class="newsletter-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <p>© 2025 Aari Creations. All rights reserved.
+      | <a href="#">Privacy Policy</a>
+      | <a href="#">Terms</a>
+      | <a href="#">Cookies</a>
+    </p>
+  </div>
+</footer>
+
+
+ <!-- Subscribe -->
+   <!-- Subscribe Modal -->
+<div id="subscribeModal" class="subscribe-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 class="modal-title">Stay Connected</h2>
+    <form id="subscribeForm">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="thank-you-popup">
+  <div class="popup-content">
+    <h3>🎉 Thank You!</h3>
+    <p>You have successfully subscribed.</p>
+    <p>We appreciate your love for Aari Work!</p>
+  </div>
+</div>
+
+
+
+
+<!-- subscribe js -->
+ <script>
+  const subscribeBtn = document.querySelector('.subscribe-pill');
+  const modal = document.getElementById('subscribeModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const form = document.getElementById('subscribeForm');
+  const popup = document.getElementById('thankYouPopup');
+
+  subscribeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  form.onsubmit = function(e) {
+    e.preventDefault();
+    modal.style.display = 'none';
+    popup.style.display = 'block';
+
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 3000);
+  };
+</script>
+
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+  <script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+    }, 2000); // 2 seconds
+  });
+</script>
+
+
+<script>
+  function logout() {
+    localStorage.removeItem("isAdminLoggedIn");
+    window.location.href = "admin-login.html";
+  }
+</script>
+<!-- <script>
+  window.onload = async () => {
+    const response = await fetch("http://localhost:8080/api/orders");
+    const orders = await response.json();
+    const adminContainer = document.getElementById("admin-orders");
+
+    orders.forEach(order => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <p><strong>${order.name}</strong> ordered <strong>${order.product}</strong> (${order.quantity}) - ₹${order.totalPrice}</p>
+        <p>Payment: ${order.payment}, Email: ${order.email}</p>
+        <hr>
+      `;
+      adminContainer.appendChild(div);
+    });
+  };
+</script> -->
+<script>
+  // Redirect to login if not logged in
+  if (localStorage.getItem("isAdminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+<script>
+  window.onload = async () => {
+    // 🟢 Check if admin is logged in (optional)
+    if (localStorage.getItem("isAdminLoggedIn") !== "true") {
+      alert("Access Denied. Please login as Admin.");
+      window.location.href = "admin-login.html";
+      return;
+    }
+
+    // 🟡 ORDERS
+    try {
+     const ordersRes = await fetch("http://localhost:8080/api/orders");
+
+      const orders = await ordersRes.json();
+      console.log(orders);
+
+      const orderBox = document.querySelector("#orders .admin-box");
+      orderBox.innerHTML = "";
+const table = document.createElement("table");
+table.classList.add("admin-table");
+table.innerHTML = `
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Product</th>
+      <th>Qty</th>
+      <th>Amount</th>
+      <th>Payment</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${orders.map(order => `
+      <tr>
+        <td>${order.name}</td>
+        <td>${order.product}</td>
+        <td>${order.quantity}</td>
+        <td>₹${order.totalPrice}</td>
+        <td>${order.payment}</td>
+        <td>${order.email}</td>
+        <td>${order.phone}</td>
+        <td>${order.address}</td>
+        <td>
+          ${order.productImage
+            ? `<img src="${order.productImage}" style="width:60px;height:auto;border-radius:5px;" />`
+            : "N/A"}
+        </td>
+      </tr>
+    `).join("")}
+  </tbody>
+`;
+function getImageUrl(imagePath) {
+  if (!imagePath) return 'default.jpg';
+  if (imagePath.startsWith('http')) return imagePath;
+  return `http://localhost:8080/images/${imagePath}`;
+}
+
+
+orderBox.appendChild(table);
+
+
+    } catch (error) {
+      console.error("Failed to fetch orders:", error);
+    }
+
+    // 🟡 PRODUCTS
+    try {
+     const productsRes = await fetch("http://localhost:8080/admin/products");
+const products = await productsRes.json();
+console.log("🧾 Products fetched:", products); // <-- हे पाहा
+
+    const productBox = document.querySelector("#products .admin-box");
+productBox.innerHTML = "";
+
+const table = document.createElement("table");
+table.classList.add("admin-table");
+table.innerHTML = `
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${products.map(p => `
+      <tr>
+        <td><img src="${p.image}" style="width:60px;" /></td>
+        <td>${p.name}</td>
+        <td>₹${p.price}</td>
+        <td>${p.category}</td>
+      </tr>
+    `).join("")}
+  </tbody>
+`;
+productBox.appendChild(table);
+
+
+    } catch (error) {
+      console.error("Failed to fetch products:", error);
+    }
+
+    // 🟡 USERS
+    try {
+      const usersRes = await fetch("http://localhost:8080/admin/users");
+      const users = await usersRes.json();
+      const userBox = document.querySelector("#users .admin-box");
+      userBox.innerHTML = "";
+
+    const table = document.createElement("table");
+table.classList.add("admin-table");
+table.innerHTML = `
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${users.map(u => `
+      <tr>
+        <td>${u.username}</td>  <!-- ✅ fixed -->
+        <td>${u.email}</td>
+       <td>${u.role ?? "User"}</td>
+
+      </tr>
+    `).join("")}
+  </tbody>
+`;
+
+userBox.appendChild(table);
+
+    } catch (error) {
+      console.error("Failed to fetch users:", error);
+    }
+  };
+</script>
+<script>
+  document.querySelector(".upload-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = prompt("Enter Product Name:");
+    const price = prompt("Enter Price:");
+    const category = prompt("Enter Category:");
+
+    const response = await fetch("http://localhost:8080/admin/products", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, price, category })
+    });
+
+    if (response.ok) {
+      alert("Product added!");
+      location.reload();
+    } else {
+      alert("Failed to add product");
+    }
+  });
+</script>
+
+
+</body>
+</html>
